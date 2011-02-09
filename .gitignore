@@ -3,7 +3,9 @@
 *.o
 *.so
 *.os
-*_wrap.c
+*_wrap.cpp
+*_wrap.h
+openframeworks.py
 
 # OS generated files
 .DS_Store?
