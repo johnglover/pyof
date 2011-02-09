@@ -17,11 +17,8 @@
     #include "../../libs/openFrameworks/sound/ofSoundPlayer.h"
     #include "../../libs/openFrameworks/video/ofVideoPlayer.h"
     #include "../../libs/openFrameworks/video/ofVideoGrabber.h"
-    #include "../../addons/ofxThread/src/ofxThread.h"
 %}
 %feature("director");
-%include "opengl.i"
-%include "std_string.i"
 
 // OS X
 #define __APPLE_CC__
@@ -47,4 +44,3 @@
 %include "../../libs/openFrameworks/sound/ofSoundPlayer.h"
 %include "../../libs/openFrameworks/video/ofVideoPlayer.h"
 %include "../../libs/openFrameworks/video/ofVideoGrabber.h"
-%include "../../addons/ofxThread/src/ofxThread.h"
