@@ -61,7 +61,7 @@ source_files = """app/ofAppGlutWindow.cpp app/ofAppRunner.cpp
                   video/ofVideoPlayer.cpp""".split()
 for i in range(len(source_files)):
     source_files[i] = "../libs/openFrameworks/" + source_files[i]
-source_files.append("openframeworks.i")
+source_files.append("openframeworks/openframeworks.i")
 
 # addons
 addon_source_files = """ofxThread/src/ofxThread.cpp""".split()
@@ -106,11 +106,16 @@ if get_platform() == "darwin":
 
 # Build the extension
 doc_lines = __doc__.split("\n")
-openframeworks = Extension("_openframeworks", 
+openframeworks = Extension("openframeworks/_openframeworks", 
                            sources = source_files,
                            include_dirs = includes,
                            extra_link_args = link_args,
                            swig_opts = ['-c++', '-threads']) 
+
+# install setup data_files in the same folder as the module
+# from distutils.command.install import INSTALL_SCHEMES 
+# for scheme in INSTALL_SCHEMES.values(): 
+    # scheme['data'] = scheme['platlib'] 
 
 setup(name='openframeworks',
       description = doc_lines[0],
@@ -123,4 +128,4 @@ setup(name='openframeworks',
       platforms = ["Mac OS-X"],
       version = '006.2',
       ext_modules = [openframeworks],
-      py_modules = ['openframeworks'])
+      packages = ['openframeworks'])
