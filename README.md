@@ -58,6 +58,10 @@ Then to install the module in your Python site-packages directory:
 
     $ python setup.py install
 
+Finally, if you do not have a copy of the fmodex dynamic library in your
+/usr/local/lib folder (or equivalent), run the following command:
+
+    sudo cp ../libs/fmodex/lib/osx/libfmodex.dylib /usr/local/lib
 
 Use
 ---
